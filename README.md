@@ -68,6 +68,17 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 
 ## Private Routes ( Needs token in request header )
 ----------
+Function | required | params
+---- | ---- | ---- |
+getUserProfile| true | _ 
+getUserNumbers| true | _
+getFinancialInfo| true | _
+updateUserProfile| true | form data
+addMobileNumber| true | mobile_number
+updateFinancialInfo| true | form data
+getNewModalSession| true | _
+claimModalSession| true | _
+claimQRSession| true | _
 
 #### user profile
 GET `api/user/profile/`.
