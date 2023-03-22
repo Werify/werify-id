@@ -57,7 +57,7 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 
 
 
-## private routes ( needs token in request header )
+## Private Routes ( Needs token in request header )
 ----------
 
 #### user profile

@@ -27,14 +27,9 @@ export const login = async (endpoint: string, identifier: any) => {
   * @param id: string
   * @param hash: string
   * @param otp: string
-  * @returns User Token and User Data
+  * @returns Access Token and User Data
   */
-interface IOtpLogin {
-  id: string
-  hash: string
-  otp: string
-}
-export const loginOTP = async (endpoint: string, payload: IOtpLogin | any) => {
+export const loginOTP = async (endpoint: string, payload: any) => {
   return fetch(baseURL + endpoint, { method: 'post', body: payload })
     .then(response => response.json())
     .then(json => { return json })

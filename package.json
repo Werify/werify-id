@@ -12,6 +12,13 @@
       "require": "./dist/werify-id.umd.cjs"
     }
   },
+  "repository": {
+    "url": "https://github.com/Werify/werify-id",
+    "directory": "/src"
+  },
+  "bugs": {
+    "url": "https://github.com/Werify/werify-id/issues"
+  },
   "files": [
     "dist"
   ],
