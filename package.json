@@ -1,0 +1,32 @@
+{
+  "name": "werify-id",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/werify-id.umd.cjs",
+  "module": "./dist/werify-id.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/werify-id.js",
+      "require": "./dist/werify-id.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  }
+}
