@@ -15,14 +15,9 @@ export declare const login: (endpoint: string, identifier: any) => Promise<any>;
   * @param id: string
   * @param hash: string
   * @param otp: string
-  * @returns User Token and User Data
+  * @returns Access Token and User Data
   */
-interface IOtpLogin {
-    id: string;
-    hash: string;
-    otp: string;
-}
-export declare const loginOTP: (endpoint: string, payload: IOtpLogin | any) => Promise<any>;
+export declare const loginOTP: (endpoint: string, payload: any) => Promise<any>;
 /**
   * @description Get a new QR session
   * @returns a QR session
@@ -96,4 +91,3 @@ export declare const claimModalSession: (endpoint: string, accessToken: string) 
   * @returns User Financial Information
   */
 export declare const claimQRSession: (endpoint: string, accessToken: string) => Promise<any>;
-export {};

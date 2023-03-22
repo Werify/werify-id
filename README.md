@@ -43,7 +43,16 @@ login('/endpoint', payload).then().catch()
 ----------
 
 
-#### request user login otp
+Function | required | params
+---- | ---- | ---- |
+setBaseUrl| true | url 
+login| true | identifier
+loginOTP| true | id, hash, otp
+getQRSession| true | _
+checkSession| true | _
+
+
+#### request user login otp 
 POST `/api/login` requires `identifier` & returns session.
 
 #### login user with otp

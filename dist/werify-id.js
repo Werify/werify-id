@@ -1,35 +1,35 @@
-let o = "";
+let r = "";
 const s = async (n) => {
-  o = n;
+  r = n;
 }, h = async (n, e) => fetch(
-  o + n,
+  r + n,
   { method: "post", body: e }
-).then((t) => t.json()).then((t) => t), a = async (n, e) => fetch(n, { method: "post", body: e }).then((t) => t.json()).then((t) => t), c = async (n) => fetch(n).then((e) => e.json()).then((e) => e), u = async (n) => fetch(n).then((e) => e.json()).then((e) => e), i = async (n, e) => fetch(
-  n,
+).then((t) => t.json()).then((t) => t), a = async (n, e) => fetch(r + n, { method: "post", body: e }).then((t) => t.json()).then((t) => t), c = async (n) => fetch(r + n).then((e) => e.json()).then((e) => e), u = async (n) => fetch(r + n).then((e) => e.json()).then((e) => e), i = async (n, e) => fetch(
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t), d = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t), f = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t), y = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e }, method: "put" }
 ).then((t) => t.json()).then((t) => t), j = async (n, e, t) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e }, method: "post", body: t }
-).then((r) => r.json()).then((r) => r), l = async (n, e) => fetch(
-  n,
+).then((o) => o.json()).then((o) => o), l = async (n, e) => fetch(
+  r + n,
   { headers: { authorization: e }, method: "put" }
 ).then((t) => t.json()).then((t) => t), m = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t), z = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t), p = async (n, e) => fetch(
-  n,
+  r + n,
   { headers: { authorization: e } }
 ).then((t) => t.json()).then((t) => t);
 export {

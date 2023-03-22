@@ -52,7 +52,7 @@ export const getQRSession = async (endpoint: string,) => {
   * @example api/session-check/modal or qr/{hash}/{id}
   * @returns token and user data
   */
-export const checkQRSession = async (endpoint: string,) => {
+export const checkSession = async (endpoint: string,) => {
   return fetch(baseURL + endpoint)
     .then(response => response.json())
     .then(json => { return json })
