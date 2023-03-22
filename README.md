@@ -13,11 +13,11 @@
 
 
 ## Dependencies
-- No need Dependency
+- No dependencies needed
 
 ## Installation
 ```bash
-npm install werify-id --save
+npm install werify-id
 ```
 ```bash
 yarn add werify-id
@@ -43,13 +43,13 @@ login('/endpoint', payload).then().catch()
 ----------
 
 
-Function | required | params
+Function | method | params
 ---- | ---- | ---- |
-setBaseUrl| true | url 
-login| true | identifier
-loginOTP| true | id, hash, otp
-getQRSession| true | _
-checkSession| true | _
+setBaseUrl| _ | url 
+login| POST | identifier
+loginOTP| POST | id, hash, otp
+getQRSession| GET | _
+checkSession| GET | _
 
 
 #### request user login otp 
@@ -68,17 +68,17 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 
 ## Private Routes ( Needs token in request header )
 ----------
-Function | required | params
+Function | method | params
 ---- | ---- | ---- |
-getUserProfile| true | _ 
-getUserNumbers| true | _
-getFinancialInfo| true | _
-updateUserProfile| true | form data
-addMobileNumber| true | mobile_number
-updateFinancialInfo| true | form data
-getNewModalSession| true | _
-claimModalSession| true | _
-claimQRSession| true | _
+getUserProfile| GET | _ 
+getUserNumbers| GET | _
+getFinancialInfo| GET | _
+updateUserProfile| PUT | form data
+addMobileNumber| POST | mobile_number
+updateFinancialInfo| PUT | form data
+getNewModalSession| GET | _
+claimModalSession| GET | _
+claimQRSession| GET | _
 
 #### user profile
 GET `api/user/profile/`.
