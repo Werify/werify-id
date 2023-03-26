@@ -13,11 +13,11 @@
 
 
 ## Dependencies
-- No need Dependency
+- No dependencies needed
 
 ## Installation
 ```bash
-npm install werify-id --save
+npm install werify-id
 ```
 ```bash
 yarn add werify-id
@@ -43,7 +43,16 @@ login('/endpoint', payload).then().catch()
 ----------
 
 
-#### request user login otp
+Function | method | params
+---- | ---- | ---- |
+setBaseUrl| _ | url 
+login| POST | identifier
+loginOTP| POST | id, hash, otp
+getQRSession| GET | _
+checkSession| GET | _
+
+
+#### request user login otp 
 POST `/api/login` requires `identifier` & returns session.
 
 #### login user with otp
@@ -59,6 +68,17 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 
 ## Private Routes ( Needs token in request header )
 ----------
+Function | method | params
+---- | ---- | ---- |
+getUserProfile| GET | _ 
+getUserNumbers| GET | _
+getFinancialInfo| GET | _
+updateUserProfile| PUT | form data
+addMobileNumber| POST | mobile_number
+updateFinancialInfo| PUT | form data
+getNewModalSession| GET | _
+claimModalSession| GET | _
+claimQRSession| GET | _
 
 #### user profile
 GET `api/user/profile/`.
