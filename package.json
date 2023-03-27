@@ -1,11 +1,20 @@
 {
-  "name": "werify-id",
+  "name": "@werify/werify-id",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/werify-id.umd.cjs",
   "module": "./dist/werify-id.js",
   "types": "./dist/index.d.ts",
+  "license": "ISC",
+  "keywords": [
+    "authentication",
+    "login",
+    "signup",
+    "auth service",
+    "Werify",
+    "Werify-id"
+  ],
   "exports": {
     ".": {
       "import": "./dist/werify-id.js",
