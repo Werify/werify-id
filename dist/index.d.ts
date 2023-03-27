@@ -30,7 +30,7 @@ export declare const getQRSession: (endpoint: string) => Promise<any>;
   * @example api/session-check/modal or qr/{hash}/{id}
   * @returns token and user data
   */
-export declare const checkQRSession: (endpoint: string) => Promise<any>;
+export declare const checkSession: (endpoint: string) => Promise<any>;
 /**
   * @description Get User Profile Data
   * @argument token

@@ -34,7 +34,7 @@ const s = async (n) => {
 ).then((t) => t.json()).then((t) => t);
 export {
   j as addMobileNumber,
-  u as checkQRSession,
+  u as checkSession,
   z as claimModalSession,
   p as claimQRSession,
   f as getFinancialInfo,
