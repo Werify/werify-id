@@ -32,7 +32,7 @@ export const werify = () => {
     * @default /api/otp
     */
   const loginOTP = async (endpoint: string, payload: any) => {
-    return fetch(config.baseURL + endpoint, { method: 'post', body: payload })
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/otp'), { method: 'post', body: payload })
       .then(response => response.json())
       .then(json => { return json })
   }
@@ -43,7 +43,7 @@ export const werify = () => {
     * @default /api/qr
     */
   const getQRSession = async (endpoint: string,) => {
-    return fetch(config.baseURL + endpoint)
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/qr'))
       .then(response => response.json())
       .then(json => { return json })
   }
@@ -73,7 +73,7 @@ export const werify = () => {
     * @default /api/user/profile
     */
   const getUserProfile = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
       .then(json => { return json })
@@ -86,7 +86,7 @@ export const werify = () => {
     * @default /api/user/profile/mobile-numbers
     */
   const getUserNumbers = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile/mobile-numbers'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
       .then(json => { return json })
@@ -99,7 +99,7 @@ export const werify = () => {
     * @default /api/user/financial-information
     */
   const getFinancialInfo = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/financial-information'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
       .then(json => { return json })
@@ -113,7 +113,7 @@ export const werify = () => {
     * @default /api/user/profile
     */
   const updateUserProfile = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile'),
       { headers: { 'authorization': accessToken }, method: 'put' })
       .then(response => response.json())
       .then(json => { return json })
@@ -127,7 +127,7 @@ export const werify = () => {
     * @default /api/user/mobile-numbers
     */
   const addMobileNumber = async (endpoint: string, accessToken: string, mobile_number: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/mobile-numbers'),
       { headers: { 'authorization': accessToken }, method: 'post', body: mobile_number })
       .then(response => response.json())
       .then(json => { return json })
@@ -141,7 +141,7 @@ export const werify = () => {
     * @default /api/user/financial-information
     */
   const updateFinancialInfo = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/financial-information'),
       { headers: { 'authorization': accessToken }, method: 'put' })
       .then(response => response.json())
       .then(json => { return json })
@@ -155,7 +155,7 @@ export const werify = () => {
     * @default /api/user/modal
     */
   const getNewModalSession = async (endpoint: string, accessToken: string) => {
-    return fetch(config.baseURL + endpoint,
+    return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/modal'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
       .then(json => { return json })
