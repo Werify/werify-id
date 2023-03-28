@@ -1,54 +1,54 @@
-const g = () => {
-  let s = {
+const y = () => {
+  let r = {
     baseURL: ""
   };
   return {
-    config: s,
-    login: async (t, n) => fetch(
-      s.baseURL + (t || "/api/login"),
-      { method: "post", body: n }
+    config: r,
+    login: async (n, t) => fetch(
+      r.baseURL + (n || "/api/login"),
+      { method: "post", body: t }
     ).then((e) => e.json()).then((e) => e),
-    loginOTP: async (t, n) => fetch(s.baseURL + t, { method: "post", body: n }).then((e) => e.json()).then((e) => e),
-    getQRSession: async (t) => fetch(s.baseURL + t).then((n) => n.json()).then((n) => n),
-    checkSession: async (t) => fetch(s.baseURL + t).then((n) => n.json()).then((n) => n),
-    getUserProfile: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    loginOTP: async (n, t) => fetch(r.baseURL + (n || "/api/otp"), { method: "post", body: t }).then((e) => e.json()).then((e) => e),
+    getQRSession: async (n) => fetch(r.baseURL + (n || "/api/qr")).then((t) => t.json()).then((t) => t),
+    checkSession: async (n) => fetch(r.baseURL + n).then((t) => t.json()).then((t) => t),
+    getUserProfile: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/profile"),
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e),
-    getUserNumbers: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    getUserNumbers: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/profile/mobile-numbers"),
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e),
-    getFinancialInfo: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    getFinancialInfo: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/financial-information"),
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e),
-    updateUserProfile: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n }, method: "put" }
+    updateUserProfile: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/profile"),
+      { headers: { authorization: t }, method: "put" }
     ).then((e) => e.json()).then((e) => e),
-    addMobileNumber: async (t, n, e) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n }, method: "post", body: e }
-    ).then((r) => r.json()).then((r) => r),
-    updateFinancialInfo: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n }, method: "put" }
+    addMobileNumber: async (n, t, e) => fetch(
+      r.baseURL + (n || "/api/user/mobile-numbers"),
+      { headers: { authorization: t }, method: "post", body: e }
+    ).then((s) => s.json()).then((s) => s),
+    updateFinancialInfo: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/financial-information"),
+      { headers: { authorization: t }, method: "put" }
     ).then((e) => e.json()).then((e) => e),
-    getNewModalSession: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    getNewModalSession: async (n, t) => fetch(
+      r.baseURL + (n || "/api/user/modal"),
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e),
-    claimModalSession: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    claimModalSession: async (n, t) => fetch(
+      r.baseURL + n,
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e),
-    claimQRSession: async (t, n) => fetch(
-      s.baseURL + t,
-      { headers: { authorization: n } }
+    claimQRSession: async (n, t) => fetch(
+      r.baseURL + n,
+      { headers: { authorization: t } }
     ).then((e) => e.json()).then((e) => e)
   };
 };
 export {
-  g as werify
+  y as werify
 };
