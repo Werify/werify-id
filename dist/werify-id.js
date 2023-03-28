@@ -1,50 +1,54 @@
-let r = "";
-const s = async (n) => {
-  r = n;
-}, h = async (n, e) => fetch(
-  r + n,
-  { method: "post", body: e }
-).then((t) => t.json()).then((t) => t), a = async (n, e) => fetch(r + n, { method: "post", body: e }).then((t) => t.json()).then((t) => t), c = async (n) => fetch(r + n).then((e) => e.json()).then((e) => e), u = async (n) => fetch(r + n).then((e) => e.json()).then((e) => e), i = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t), d = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t), f = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t), y = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e }, method: "put" }
-).then((t) => t.json()).then((t) => t), j = async (n, e, t) => fetch(
-  r + n,
-  { headers: { authorization: e }, method: "post", body: t }
-).then((o) => o.json()).then((o) => o), l = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e }, method: "put" }
-).then((t) => t.json()).then((t) => t), m = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t), z = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t), p = async (n, e) => fetch(
-  r + n,
-  { headers: { authorization: e } }
-).then((t) => t.json()).then((t) => t);
+const g = () => {
+  let s = {
+    baseURL: ""
+  };
+  return {
+    config: s,
+    login: async (t, n) => fetch(
+      s.baseURL + (t || "/api/login"),
+      { method: "post", body: n }
+    ).then((e) => e.json()).then((e) => e),
+    loginOTP: async (t, n) => fetch(s.baseURL + t, { method: "post", body: n }).then((e) => e.json()).then((e) => e),
+    getQRSession: async (t) => fetch(s.baseURL + t).then((n) => n.json()).then((n) => n),
+    checkSession: async (t) => fetch(s.baseURL + t).then((n) => n.json()).then((n) => n),
+    getUserProfile: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e),
+    getUserNumbers: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e),
+    getFinancialInfo: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e),
+    updateUserProfile: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n }, method: "put" }
+    ).then((e) => e.json()).then((e) => e),
+    addMobileNumber: async (t, n, e) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n }, method: "post", body: e }
+    ).then((r) => r.json()).then((r) => r),
+    updateFinancialInfo: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n }, method: "put" }
+    ).then((e) => e.json()).then((e) => e),
+    getNewModalSession: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e),
+    claimModalSession: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e),
+    claimQRSession: async (t, n) => fetch(
+      s.baseURL + t,
+      { headers: { authorization: n } }
+    ).then((e) => e.json()).then((e) => e)
+  };
+};
 export {
-  j as addMobileNumber,
-  u as checkSession,
-  z as claimModalSession,
-  p as claimQRSession,
-  f as getFinancialInfo,
-  m as getNewModalSession,
-  c as getQRSession,
-  d as getUserNumbers,
-  i as getUserProfile,
-  h as login,
-  a as loginOTP,
-  s as setBaseUrl,
-  l as updateFinancialInfo,
-  y as updateUserProfile
+  g as werify
 };

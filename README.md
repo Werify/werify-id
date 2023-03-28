@@ -5,7 +5,17 @@
 
 ## Simple and lightweight auth service
 
-**** First of all set your **baseURL** using `setBaseUrl` function ****
+**** First of all set your **baseURL** using `config` Object ****
+
+```javascript
+import { werify } from '@werify/werify-id';
+
+// Create the package instance
+const authService = werify()
+
+// Now you have access to everything :)
+authService.config.baseURL = 'your_baseURL_here'
+```
 
 **Recommended Stack :**
 1. **Vite**
@@ -17,10 +27,10 @@
 
 ## Installation
 ```bash
-npm install werify-id
+npm install @werify/werify-id
 ```
 ```bash
-yarn add werify-id
+yarn add @werify/werify-id
 ```
 
 ## Usage
@@ -29,13 +39,13 @@ yarn add werify-id
 
 
 ```javascript
-import { setBaseUrl, login } from 'werify-id';
+import { werify } from '@werify/werify-id';
 
-// Set Base Url
-setBaseUrl('yoursite.com/api')
+// Create the package instance
+const authService = werify()
 
 // Use Functions
-login('/endpoint', payload).then().catch()
+authService.login('/endpoint', payload).then().catch()
 ```
 
 ## Public Routes ( Doesn't need any credintials or authorization )
@@ -43,13 +53,12 @@ login('/endpoint', payload).then().catch()
 ----------
 
 
-Function | method | params
----- | ---- | ---- |
-setBaseUrl| _ | url 
-login| POST | identifier
-loginOTP| POST | id, hash, otp
-getQRSession| GET | _
-checkSession| GET | _
+Function | method | params | default endpoint
+---- | ---- | ---- | --- |
+login| POST | identifier | /api/login
+loginOTP| POST | id, hash, otp | /api/otp
+getQRSession| GET | _ | /api/qr
+checkSession| GET | _ | /api/session-check/model/{hash}/{id}
 
 
 #### request user login otp 
@@ -68,17 +77,17 @@ GET `api/session-check/modal/{hash}/{id}` returns token for user with some info.
 
 ## Private Routes ( Needs token in request header )
 ----------
-Function | method | params
----- | ---- | ---- |
-getUserProfile| GET | _ 
-getUserNumbers| GET | _
-getFinancialInfo| GET | _
-updateUserProfile| PUT | form data
-addMobileNumber| POST | mobile_number
-updateFinancialInfo| PUT | form data
-getNewModalSession| GET | _
-claimModalSession| GET | _
-claimQRSession| GET | _
+Function | method | params | default endpoint
+---- | ---- | ---- | --- |
+getUserProfile| GET | _ | /api/user/profile
+getUserNumbers| GET | _ | /api/user/profile/mobile-numbers
+getFinancialInfo| GET | _ | /api/user/financial-information
+updateUserProfile| PUT | form data | /api/user/profile
+addMobileNumber| POST | mobile_number | /api/user/mobile-numbers
+updateFinancialInfo| PUT | form data | /api/user/financial-information/
+getNewModalSession| GET | _ | /api/user/modal
+claimModalSession| GET | _ | /api/modal/{hash}/{id}
+claimQRSession| GET | _ | /api/qr/{hash}/{id}
 
 #### user profile
 GET `api/user/profile/`.
