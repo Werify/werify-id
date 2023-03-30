@@ -31,7 +31,7 @@ export const werify = () => {
     * @returns Access Token and User Data
     * @default /api/otp
     */
-  const loginOTP = async (endpoint: string, payload: any) => {
+  const loginOTP = async (payload: any, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/otp'), { method: 'post', body: payload })
       .then(response => response.json())
       .then(json => { return json })
@@ -72,7 +72,7 @@ export const werify = () => {
     * @returns user data
     * @default /api/user/profile
     */
-  const getUserProfile = async (endpoint: string, accessToken: string) => {
+  const getUserProfile = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
@@ -85,7 +85,7 @@ export const werify = () => {
     * @returns user Numbers
     * @default /api/user/profile/mobile-numbers
     */
-  const getUserNumbers = async (endpoint: string, accessToken: string) => {
+  const getUserNumbers = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile/mobile-numbers'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
@@ -98,7 +98,7 @@ export const werify = () => {
     * @returns User Financial Information
     * @default /api/user/financial-information
     */
-  const getFinancialInfo = async (endpoint: string, accessToken: string) => {
+  const getFinancialInfo = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/financial-information'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
@@ -112,7 +112,7 @@ export const werify = () => {
     * @returns updated user data
     * @default /api/user/profile
     */
-  const updateUserProfile = async (endpoint: string, accessToken: string) => {
+  const updateUserProfile = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/profile'),
       { headers: { 'authorization': accessToken }, method: 'put' })
       .then(response => response.json())
@@ -126,7 +126,7 @@ export const werify = () => {
     * @returns mobile number list
     * @default /api/user/mobile-numbers
     */
-  const addMobileNumber = async (endpoint: string, accessToken: string, mobile_number: string) => {
+  const addMobileNumber = async (accessToken: string, mobile_number: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/mobile-numbers'),
       { headers: { 'authorization': accessToken }, method: 'post', body: mobile_number })
       .then(response => response.json())
@@ -140,7 +140,7 @@ export const werify = () => {
     * @returns User Financial Information
     * @default /api/user/financial-information
     */
-  const updateFinancialInfo = async (endpoint: string, accessToken: string) => {
+  const updateFinancialInfo = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/financial-information'),
       { headers: { 'authorization': accessToken }, method: 'put' })
       .then(response => response.json())
@@ -154,7 +154,7 @@ export const werify = () => {
     * @returns New Session from modal and user
     * @default /api/user/modal
     */
-  const getNewModalSession = async (endpoint: string, accessToken: string) => {
+  const getNewModalSession = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + (endpoint ? endpoint : '/api/user/modal'),
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
@@ -168,7 +168,7 @@ export const werify = () => {
     * @returns returns new session for modal and user
     * @default /api/modal/{hash}/{id}
     */
-  const claimModalSession = async (endpoint: string, accessToken: string) => {
+  const claimModalSession = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + endpoint,
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())
@@ -182,7 +182,7 @@ export const werify = () => {
     * @returns User Financial Information
     * @default /api/qr/{hash}/{id}
     */
-  const claimQRSession = async (endpoint: string, accessToken: string) => {
+  const claimQRSession = async (accessToken: string, endpoint: string) => {
     return fetch(config.baseURL + endpoint,
       { headers: { 'authorization': accessToken } })
       .then(response => response.json())

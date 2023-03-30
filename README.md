@@ -1,9 +1,10 @@
 # Werify-ID
+## Simple and lightweight auth service by **Werify**
+
 
 ![Werify](https://avatars.githubusercontent.com/u/125675596?s=200&v=4)
 
 
-## Simple and lightweight auth service
 
 **** First of all set your **baseURL** using `config` Object ****
 
@@ -16,6 +17,8 @@ const authService = werify()
 // Now you have access to everything :)
 authService.config.baseURL = 'your_baseURL_here'
 ```
+
+**If you want to use the default endpoints feel free to leave the `endpoint` parameter in each function**
 
 **Recommended Stack :**
 1. **Vite**
